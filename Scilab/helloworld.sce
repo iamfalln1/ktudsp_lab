@@ -1,5 +1,5 @@
-disp("hello world") 	//to display 
-a=5;                	//variables    
+disp("hello world")////////to display
+a=5;///////////////////////variables
 b=10;
 c=a+b;
 disp(c)
