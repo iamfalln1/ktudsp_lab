@@ -1,15 +1,16 @@
-clc
+clc;
 clear;
 close all;
-n = 0:1:50;
-f = input('Enter the Frequency');
-a = input('Enter the Amplitude');
-N = input('Enter the Number of Unit Step');
-subplot (3,3,1);
-y = a*sin(2*pi*f*n);
+n=0:1:50;
+f=input('Enter the value of frequency');
+a=input('Enter the value of amplitude');
+N=input('Enter the length of unit step');
+subplot(3,3,1);
+y=a*sin(2*pi*f*n);
 stem(n,y,'r');
 xlabel('time');
 ylabel('amplitude');
+title('sine wave')
 grid on;
 subplot(3,3,2);
 z=a*cos(2*pi*f*n);
@@ -31,8 +32,8 @@ xlabel('time');
 ylabel('amplitude');
 title('ramp wave')
 grid on;
-x=0:N;
-d=ones(1,N+1);
+x=0:N-1;
+d=ones(1,N);
 subplot(3,3,5);
 stem(x,d,'r');
 xlabel('time');
