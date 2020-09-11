@@ -5,7 +5,7 @@ clear;
 xdel(winsid()); //Deletes all graphics windows
 t = 0:0.001:1; //Continuous time, t
 f = 5; //Frequency
-a = 1; //Amplitude
+a = 5; //Amplitude
 pi = %pi; //%pi is defined for pi
 //Sine Wave
 x1 = a*sin(2*pi*f*t);
@@ -21,41 +21,58 @@ plot(t,x2);
 title('Cosine Wave','color','red','fontsize',3);
 xlabel("Continuous Time, t","fontsize",2.5,"color","black");
 ylabel("Amplitude, x(t)","fontsize",2.5,"color","black");
-//Ramp wave
-t2 = 0:10;
-x4 = t2;
+//Square Wave
+x3=a*squarewave(2*pi*f*t);
 subplot(333);
-plot(t2,x4);
+plot(t,x3);
+title('Square Wave','color','red','fontsize','3');
+xlabel("Continuous Time,t","fontsize",2,"color","black");
+ylabel("Amplitude,x(t)","fontsize",2,"color","black");
+//Ramp wave
+x4 = a*t;
+subplot(334);
+plot(t,x4);
 title('Ramp Wave','color','red','fontsize',3);
 xlabel("Continuous Time, t","fontsize",2.5,"color","black");
 ylabel("Amplitude, x(t)","fontsize",2.5,"color","black");
 //Exponential wave
-t3 = 0:0.1:5;
-x5 = exp(t3);
-subplot(334);
-plot(t3,x5);
+x5 = exp(t);
+subplot(335);
+plot(t,x5);
 title('Exponential Wave','color','red','fontsize',3);
 xlabel("Continuous Time,t","fontsize",2,"color","black");
 ylabel("Amplitude,x(t)","fontsize",2,"color","black");
-//Random wave
-x6 = rand(1,100); //rand(row,column) gives a random matrix
-subplot(335);
-plot(1:length(x6),x6);
-title('Random Wave','color','red','fontsize',3);
+//Unit Step Wave
+x7 = ones(t);
+subplot(336);
+plot(t,x7);
+title('Unit Step Wave','color','red','fontsize','3');
 xlabel("Continuous Time,t","fontsize",2,"color","black");
 ylabel("Amplitude,x(t)","fontsize",2,"color","black");
-//Unit Step Wave
-t4=0:10;
-x7=ones(1,length(t4));
-//Another way
-//x7=ones(1,length(t4));
-//for i=1:10
-//    x7(1,i)=0;
-//end
-subplot(336);
-plot(t4,x7);
-title('Unit Step Wave','color','red','fontsize','3');
-xlabel("Continuous Time,t","fontsixe",2,"color","black");
+//Sinc Wave
+t1 =-50:50;
+f1=0.0625;
+y =sinc(2*%pi*t1*f1);
+subplot(337);
+plot(t1,y,2);
+title('Sinc Wave','color','red','fontsize','3');
+xlabel("Continuous Time,t","fontsize",2,"color","black");
+ylabel("Amplitude,x(t)","fontsize",2,"color","black");
+//Impulse Wave
+n1=-10:10;
+x3=[zeros(1,10) 1 zeros(1,10)];
+subplot(338);
+plot(n1,x3);
+title('Impulse Wave','color','red','fontsize','3');
+xlabel("Continuous Time,t","fontsize",2,"color","black");
+ylabel("Amplitude,x(t)","fontsize",2,"color","black");
+//Random wave
+t=0:0.01:1;
+x6 = rand(1,length(t)); //rand(row,column) gives a random matrix
+subplot(339);
+plot(t,x6);
+title('Random Wave','color','red','fontsize',3);
+xlabel("Continuous Time,t","fontsize",2,"color","black");
 ylabel("Amplitude,x(t)","fontsize",2,"color","black");
 
 
