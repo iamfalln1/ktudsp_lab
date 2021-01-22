@@ -1,0 +1,25 @@
+clc ;
+close;
+clear;
+x= input('First sequence: ');
+y= input('Second Sequence: ');
+z= convol(x,y);
+subplot(3,1,1);
+plot2d3(x);
+//xgrid(2);
+title('First Sequence','fontsize',3);
+xlabel('n','fontsize',2);
+ylabel('x(n)','fomtsize',2);
+subplot(3,1,2);
+plot2d3(y);
+//xgrid(2);
+title('Second Sequence','fontsize',3);
+xlabel('n','fontsize',2);
+ylabel('y(n)','fomtsize',2);
+subplot(3,1,3);
+plot2d3(z);
+//xgrid(2);
+title('Convolution Sequence','fontsize',3);
+xlabel('n','fontsize',2);
+ylabel('z(n)','fomtsize',2);
+disp(z)

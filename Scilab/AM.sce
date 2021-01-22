@@ -31,7 +31,7 @@ title('Amplitude Modulated Wave','color','green','fontsize',3);
 xlabel("Continuous Time, t","fontsize",2,"color","black");
 ylabel("Amplitude, x(t)","fontsize",2,"color","black");
 //to generate frequency spectrum of generated AM wave
-Vf = abs(fft(Vt));
+Vf = abs(fft(Vt)); //abs(fft(Vt,2048))/1024;
 scf(1); //figure3
 plot2d(Vf);
 title('Frequency Spectrum','color','green','fontsize',3);
