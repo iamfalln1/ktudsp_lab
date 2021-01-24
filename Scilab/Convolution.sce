@@ -1,25 +1,55 @@
+//To perform Convolution on given sequences
+// 1) Linear Convolution using inbuilt function
 clc ;
 close;
 clear;
-x= input('First sequence: ');
-y= input('Second Sequence: ');
-z= convol(x,y);
-subplot(3,1,1);
-plot2d3(x);
-//xgrid(2);
+ieee(1);
+a = input('Enter starting point of x[n]: ');
+b = input('Enter starting point of y[n]: ');
+x = input('First sequence: ');
+h = input('Second Sequence: ');
+z = conv(x,h);
+m = length(x);
+n = length(h);
+nx = a:(a+m-1);
+nh = b:(b+n-1);
+nz = a+b:length(z)+a+b-1
+scf(0);
+plot2d3('gnn',nx,x,2)
+//f = gca();
+//f.x_location = "origin";//get current axes
+//f.y_location = "origin"//to change reference axis
 title('First Sequence','fontsize',3);
 xlabel('n','fontsize',2);
 ylabel('x(n)','fomtsize',2);
-subplot(3,1,2);
-plot2d3(y);
-//xgrid(2);
+scf(1);
+plot2d3('gnn',nh,h,2)
+//f = gca(); 
+//f.x_location = "origin"; 
+//f.y_location = "origin"
 title('Second Sequence','fontsize',3);
 xlabel('n','fontsize',2);
-ylabel('y(n)','fomtsize',2);
-subplot(3,1,3);
-plot2d3(z);
-//xgrid(2);
+ylabel('h(n)','fomtsize',2);
+scf(2);
+plot2d3('gnn',nz,z,3)
+//f = gca();
+//f.x_location = "origin";
+//f.y_location = "origin"
 title('Convolution Sequence','fontsize',3);
 xlabel('n','fontsize',2);
 ylabel('z(n)','fomtsize',2);
-disp(z)
+disp("Convolution Sum = ",z);
+// 2) Linear Convolution using Convolution Sum formula
+for i = 1 : n + m - 1
+    conv_sum = 0;
+    for j = 1 : i
+        if (((i - j + 1) <= n) & (j <= m))
+            conv_sum = conv_sum + x(j) * h(i - j + 1);
+        end;
+        Z(i) = conv_sum;
+    end;    
+end;
+disp('Convolution Sum using Direct Formula = ',Z)
+
+
+
