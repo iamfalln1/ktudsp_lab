@@ -13,31 +13,31 @@ m = length(x);
 n = length(h);
 nx = a:(a+m-1);
 nh = b:(b+n-1);
-nz = a+b:length(z)+a+b-1
+nz = a+b:length(z)+a+b-1;
 scf(0);
-plot2d3('gnn',nx,x,2)
-//f = gca();
-//f.x_location = "origin";//get current axes
-//f.y_location = "origin"//to change reference axis
+plot2d3('gnn',nx,x,2);
+f = gca();
+f.x_location = "origin";//get current axes
+f.y_location = "origin"//to change reference axis
 title('First Sequence','fontsize',3);
-xlabel('n','fontsize',2);
-ylabel('x(n)','fomtsize',2);
+xlabel("Discrete Time, n","fontsize",2);
+ylabel("x[n]","fontsize",2);
 scf(1);
-plot2d3('gnn',nh,h,2)
-//f = gca(); 
-//f.x_location = "origin"; 
-//f.y_location = "origin"
+plot2d3(nh,h,2);
+f = gca(); 
+f.x_location = "origin"; 
+f.y_location = "origin"
 title('Second Sequence','fontsize',3);
-xlabel('n','fontsize',2);
-ylabel('h(n)','fomtsize',2);
+xlabel("Discrete Tine, n","fontsize",2);
+ylabel("h[n]","fontsize",2);
 scf(2);
-plot2d3('gnn',nz,z,3)
-//f = gca();
-//f.x_location = "origin";
-//f.y_location = "origin"
+plot2d3('gnn',nz,z,3);
+f = gca();
+f.x_location = "origin";
+f.y_location = "origin"
 title('Convolution Sequence','fontsize',3);
-xlabel('n','fontsize',2);
-ylabel('z(n)','fomtsize',2);
+xlabel('Discrete Time, n','fontsize',2);
+ylabel('z[n]','fontsize',2);
 disp("Convolution Sum = ",z);
 // 2) Linear Convolution using Convolution Sum formula
 for i = 1 : n + m - 1
@@ -49,7 +49,7 @@ for i = 1 : n + m - 1
         Z(i) = conv_sum;
     end;    
 end;
-disp('Convolution Sum using Direct Formula = ',Z)
+disp('Convolution Sum using Direct Formula = ',Z')
 
 
 
