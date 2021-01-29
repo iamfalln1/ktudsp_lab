@@ -20,7 +20,7 @@ for n = 1:N
     if(j <=0 ) 
       j = N + j;
     end
-  y(n) = y(n) + x(i) * h(j);
+  y(1,n) = y(n) + x(i) * h(j);
 end
 end
-disp("Circular Convolution Sequence",y')
+disp("Circular Convolution Sequence",y)

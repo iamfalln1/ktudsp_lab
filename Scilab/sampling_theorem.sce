@@ -1,3 +1,4 @@
+//To verify sampling theorem
 clc;
 clear;
 close;

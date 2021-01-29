@@ -1,3 +1,4 @@
+//To make a digital IIR Filter
 clc;
 clear;
 ieee(0);
@@ -7,7 +8,6 @@ f2 =3000; // input('Enter the stop band edge (Hz )= ');
 k1 = -1; // input('Enter the pass band attenuation (dB)= ' );
 k2 = -15; // input('Enter the stop band attenuation (dB)= ' );
 fs =10000; // input('Enter the sampling rate (Hz )= ');
-
  // Digital filter specifications(rad)
 w1 = 2*pi*f1*1/fs;
 w2 = 2*pi*f2*1/fs;

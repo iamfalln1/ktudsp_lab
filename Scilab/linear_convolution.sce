@@ -46,10 +46,10 @@ for i = 1 : n + m - 1
         if (((i - j + 1) <= n) & (j <= m))
             conv_sum = conv_sum + x(j) * h(i - j + 1);
         end;
-        Z(i) = conv_sum;
+        Z(1,i) = conv_sum;
     end;    
 end;
-disp('Convolution Sum using Direct Formula = ',Z')
+disp('Convolution Sum using Direct Formula = ',Z)
 
 
 
