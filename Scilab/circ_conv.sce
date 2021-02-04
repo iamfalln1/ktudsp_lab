@@ -1,5 +1,5 @@
 //To perform circular convolution
-//clc;
+clc;
 clear;
 close;
 x1 = input("Enter First Sequence: ");
@@ -50,7 +50,7 @@ disp('circular convolution result x3[n]= ',x3)
     
     
     
-    
+ 
     
     
     

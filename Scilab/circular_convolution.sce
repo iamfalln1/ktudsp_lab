@@ -21,6 +21,6 @@ for n = 1:N
       j = N + j;
     end
   y(1,n) = y(n) + x(i) * h(j);
-end
+  end
 end
 disp("Circular Convolution Sequence",y)

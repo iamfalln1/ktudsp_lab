@@ -2,8 +2,8 @@
 clc;
 clear;
 ieee(0);
-x = 50; 
-I1 = linspace(1,50);
+x = 75; 
+I1 = linspace(1,100);
 disp("Input Matrix =",I1);
 I2 = dct(I1);
 I3 = [I2(1:x),zeros(1,(100-x))];
